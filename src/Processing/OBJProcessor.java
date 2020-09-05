@@ -37,7 +37,7 @@ public class OBJProcessor {
                     textures.add(texture);
                 } else if (line.startsWith("vn ")) {
                     String[] currentLine = line.split(" ");
-                    Vector3D normal = new Vector3D((float) Float.valueOf(currentLine[1]), Float.valueOf(currentLine[2]), Float.valueOf(currentLine[3]));
+                    Vector3D normal = new Vector3D(Float.valueOf(currentLine[1]), Float.valueOf(currentLine[2]), Float.valueOf(currentLine[3]));
                     normals.add(normal);
                 } else if (line.startsWith("f ")) {
                     String[] currentLine = line.split(" ");

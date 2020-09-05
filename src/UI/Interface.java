@@ -37,7 +37,6 @@ public class Interface {
             jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             int response = jFileChooser.showOpenDialog(null);
             if (response == JFileChooser.APPROVE_OPTION) {
-                // set the label to the path of the selected directory
                 ui.txtOutputAddress.setText(jFileChooser.getSelectedFile().getAbsolutePath());
             }
         });
