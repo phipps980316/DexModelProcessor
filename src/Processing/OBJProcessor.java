@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OBJProcessor {
-    public static void processFile(String filename) {
+    public static void processFile(String modelName, String input, String output) {
         FileReader isr = null;
-        File objFile = new File("input/"+filename+".obj");
+        File objFile = new File(input);
         try {
             isr = new FileReader(objFile);
         } catch (FileNotFoundException e) {
@@ -60,7 +60,7 @@ public class OBJProcessor {
         float furthest = convertDataToArrays(vertices, textures, normals, verticesArray,
                 texturesArray, normalsArray);
         int[] indicesArray = convertIndicesListToArray(indices);
-        ModelFileSave.saveModel(new ModelData(verticesArray, texturesArray, normalsArray, indicesArray, furthest), filename);
+        ModelFileSave.saveModel(new ModelData(verticesArray, texturesArray, normalsArray, indicesArray, furthest), modelName, output);
     }
 
     private static void processVertex(String[] vertex, List<Vertex> vertices, List<Integer> indices) {

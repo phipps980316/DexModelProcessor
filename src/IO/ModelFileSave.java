@@ -6,9 +6,9 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
 public class ModelFileSave {
-    public static void saveModel(ModelData modelData, String filename){
+    public static void saveModel(ModelData modelData, String modelName, String output){
         try{
-            FileOutputStream fileOutputStream = new FileOutputStream("output/"+filename+".modeldata");
+            FileOutputStream fileOutputStream = new FileOutputStream(output+"/"+modelName+".modeldata");
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(modelData);
             objectOutputStream.close();
